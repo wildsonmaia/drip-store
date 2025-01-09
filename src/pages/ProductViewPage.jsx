@@ -1,23 +1,15 @@
 import Gallery from "../components/Gallery"
-import Section from "../components/Section";
+import BuyBox from "../components/BuyBox"
+import Section from "../components/Section"
 import ProductListing from "../components/ProductListing"
 
-const Home = () => {
-    const galleryList =  [
-            { "key": 1, "src": "/home-slide-1.jpeg", "thumbnails": "/home-slide-1.jpeg" },
-            { "key": 2, "src": "/home-slide-2.jpeg", "thumbnails": "/home-slide-2.jpeg" },
-            { "key": 3, "src": "/home-slide-3.jpeg", "thumbnails": "/home-slide-3.jpeg" },
-            { "key": 4, "src": "/home-slide-4.jpeg", "thumbnails": "/home-slide-4.jpeg" },
-            { "key": 5, "src": "/home-slide-5.jpeg", "thumbnails": "/home-slide-5.jpeg" },
-            { "key": 6, "src": "/home-slide-6.jpeg", "thumbnails": "/home-slide-6.jpeg" },
-            { "key": 7, "src": "/home-slide-7.jpeg", "thumbnails": "/home-slide-7.jpeg" },
-            { "key": 8, "src": "/home-slide-8.jpeg", "thumbnails": "/home-slide-8.jpeg" }
-    ]
-
-    const collectionProducts = [
-        { "key": 1, "src": "/collection-1.png" },
-        { "key": 2, "src": "/collection-2.png" },
-        { "key": 3, "src": "/collection-3.png" }
+const ProductViewPage = () => {
+    const productsImages = [
+        { "key": 1, "category": "tenis" , "src": "/product-thumb-1.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
+        { "key": 2, "category": "tenis" , "src": "/product-thumb-2.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
+        { "key": 3, "category": "tenis" , "src": "/product-thumb-3.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
+        { "key": 4, "category": "tenis" , "src": "/product-thumb-4.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
+        { "key": 5, "category": "tenis" , "src": "/product-thumb-5.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" }
     ]
 
     const highProducts = [
@@ -37,24 +29,18 @@ const Home = () => {
         { "key": 14, "category": "tenis" , "src": "/product-thumb-4.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
         { "key": 15, "category": "tenis" , "src": "/product-thumb-5.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" }
     ]
-    return (
-        <div className="w-screen">
-            <Gallery classname="w-full flex align-items-center justify-content-center" images={galleryList} width="" height="681px" radius="4px" showThumbs={galleryList} />
-            
-            <Section title="Coleções em destaque" titleAlign="center" link="" children="">
-            <div className="py-4 w-full flex justify-content-center gap-4 list-none">
-                {collectionProducts.map((product) => (
-                    <li key={product.key} ><img className="border-round" src={product.src} /></li>
-                ))}
-            </div>
-            </Section>
 
-            <Section title="Produtos em alta" titleAlign="left" link="" children="">
-                <ProductListing products={highProducts} />
-            </Section>
-            
+    return ( 
+        <>
+        <div className="flex">
+            <Gallery images={productsImages} showThumbs="" width='700px' height='570px' radius="4px" />
+            <BuyBox name="Prod1" reference="lorem" stars="3" rating="5.5" price="99,90" priceDiscount="87,99" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sed, quisquam exercitationem rem dolor cupiditate blanditiis quam commodi pariatur nihil accusamus animi atque quia esse corporis fuga libero! Pariatur, aut."/>
         </div>
-    );
+        <Section title="Produtos recomendados" titleAlign="left">
+            <ProductListing products={highProducts} />
+        </Section>
+        </>
+     );
 }
-
-export default Home;
+ 
+export default ProductViewPage;

@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import './App.css'
 import Paths from './paths/Paths'
 
 function App() {
 
   return (
-    <div>
+    <div  className="overflow-hidden">      
       <Paths />
     </div>
   )
