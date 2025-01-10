@@ -30,6 +30,8 @@ const Header = () => {
             handleSearch()
         }
     }
+
+    const orders = ""
    
     return (
         <div className='flex-column'>            
@@ -47,8 +49,12 @@ const Header = () => {
                 <button style={{ backgroundColor: "#C92071", width: "114px", height: "40px", borderRadius: "4px", color: "white", fontStyle: "bold", fontSize: "14px" }} className='border-none' onClick={() =>{navigate('/login')}} >
                     Entrar
                 </button>
-                <button className='bg-white border-none'>
+                <button className='bg-white border-none relative p-1' onClick={() => {navigate('/pedidos')}}>
                     <img src={minicart} ></img>
+                    
+                    {orders != "" && <div className='absolute top-0 right-0 flex justify-content-center align-items-center' style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#C92071", color: "white", fontSize: "8px" }} >
+                        <p>{orders}</p>
+                    </div> }              
                 </button>
             </div>
             <div>
