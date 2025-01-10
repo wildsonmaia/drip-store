@@ -1,18 +1,12 @@
 const Informations = ({ title, informations }) => {
-    const infos = [
-        {
-            "text": "Sobre Drip Store",
-            "link": "/about"
-        },
-        {
-            "text": "Blog",
-            "link": "/blog"
-        }
-    ]
     return ( 
-        <div>
-            {title}
-            {informations}
+        <div className="p-0 m-0">
+            <h2>{title}</h2>
+            <ul className="list-none m-0 p-0">
+                {informations.map((info, key) => (
+                    <li className="flex-wrap" key={key}><a href={info.link}>{info.text}</a></li>
+                ))}
+            </ul>
         </div>
      );
 }

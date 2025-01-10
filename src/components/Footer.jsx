@@ -2,6 +2,7 @@ import logofooter from "../assets/logo-footer.svg"
 import "primeicons/primeicons.css"
 import styled from "styled-components"
 import { InputIcon } from "primereact/inputicon"
+import Informations from "./Informations"
 
 const FooterContainer = styled.footer`
     background-color: #1F1F1F;
@@ -14,10 +15,31 @@ const FooterContainer = styled.footer`
 `
 
 const Footer = () => {
+    const infos = [
+        { "text": "Sobre Drip Store", "link": "" },
+        { "text": "Segurança", "link": "" },
+        { "text": "Wishlist", "link": "" },
+        { "text": "Blog", "link": "" },
+        { "text": "Trabalhe conosco", "link": "" },
+        { "text": "Meus Pedidos", "link": "" }
+    ]
+
+    const categs = [
+        { "text": "Camisetas", "link": "" },
+        { "text": "Calças", "link": "" },
+        { "text": "Bonés", "link": "" },
+        { "text": "Tênis", "link": "" },
+        { "text": "Headphones", "link": "" }
+    ]
+
+    const contacts = [
+        { "text": "Av. Santos Dumont, 1510 - 1° andar - Aldeota, Fortaleza - CE, 60150-161", "link": "" },
+        { "text": "(85) 3051-3411", "link": "" }
+    ]
     return (
-        <FooterContainer className="">
-            <div className="w-full flex py-3 px-5">
-                <div className="mx-3">
+        <FooterContainer>
+            <div className="w-full flex py-3 p-0 gap-8">
+                <div className="w-3 mx-3">
                     <img src={logofooter} alt="" />
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ea qui, saepe eveniet nisi veritatis id, exercitationem velit autem impedit nostrum aperiam. Eos praesentium, eius iste laborum consequatur suscipit perspiciatis?</p>
                     <div>
@@ -41,33 +63,15 @@ const Footer = () => {
                     </div>
                 </div>
                 
-                <div className="grid col-9 justify-content-center gap-6">
-                    <ul className="list-none">
-                        <h2>Informação</h2>
-                        <li><a href=""  style={{ color: "#ffffff" }}>Sobre Drip Store</a></li>
-                        <li><a href="" >Segurança</a></li>
-                        <li><a href="" >Wishlist</a></li>
-                        <li><a href="" >Blog</a></li>
-                        <li><a href="" >Trabalhe conosco</a></li>
-                        <li><a href="" >Meus Pedidos</a></li>
-                    </ul>
-                    <ul className="list-none">
-                        <h2>Produtos</h2>
-                        <li><a href="" >Camisetas</a></li>
-                        <li><a href="" >Calças</a></li>
-                        <li><a href="" >Bonés</a></li>
-                        <li><a href="" >Headphones</a></li>
-                        <li><a href="" >Tênis</a></li>
-                    </ul>
-                    <ul className="list-none">
-                        <h2>Contato</h2>
-                        <li>Av. Santos Dumont, 1510 - 1° andar - Aldeota, Fortaleza - CE, 60150-161</li>
-                        <li>(85) 3051-3411</li>
-                    </ul>
+                <div className="p-0 w-9 flex flex-row justify-content-center gap-5">
+                    <Informations title="Informação" informations={infos} />
+                    <Informations title="Categorias" informations={categs} />
+                    <Informations title="Contato" informations={contacts} />
+                    
                 </div>
             </div>
             <div className="py-3 flex-column justify-content-center">
-                <hr className="mx-5" />
+                <hr className="mx-3" />
                 <p className="my-5 text-center">&copy; 2024 Digital College</p>
             </div>
         </FooterContainer>
