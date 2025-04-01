@@ -1,62 +1,47 @@
 import Section from "../components/Section"
 import ProductListing from "../components/ProductListing"
 import FilterGroup from "../components/FilterGroup"
+import products from "../products.json"
 
 const ProductListingPage = () => {
-    const highProducts = [
-        { "key": 1, "category": "tenis" , "src": "/product-thumb-1.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 2, "category": "tenis" , "src": "/product-thumb-2.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 3, "category": "tenis" , "src": "/product-thumb-3.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 4, "category": "tenis" , "src": "/product-thumb-4.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 5, "category": "tenis" , "src": "/product-thumb-5.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 6, "category": "tenis" , "src": "/product-thumb-1.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 7, "category": "tenis" , "src": "/product-thumb-2.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 8, "category": "tenis" , "src": "/product-thumb-3.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 9, "category": "tenis" , "src": "/product-thumb-4.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 10, "category": "tenis" , "src": "/product-thumb-5.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 11, "category": "tenis" , "src": "/product-thumb-1.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 12, "category": "tenis" , "src": "/product-thumb-2.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 13, "category": "tenis" , "src": "/product-thumb-3.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 14, "category": "tenis" , "src": "/product-thumb-4.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" },
-        { "key": 15, "category": "tenis" , "src": "/product-thumb-5.jpeg", "name": "Nome do produto", "price": "200", "discount": "30" , "priceDiscount": "149.9" }
-    ]
+    const highProducts = products
 
     const marcas = [
-        { "key": 1, "name": "Adidas" },
-        { "key": 2, "name": "Nike" },
-        { "key": 3, "name": "Puma" }
+        { "key": 1, "text": "Adidas", "value": "" },
+        { "key": 2, "text": "Nike", "value": "" },
+        { "key": 3, "text": "Puma", "value": "" }
     ]
 
     const categorias = [
-        { "key": 1, "name": "Esporte e lazer" },
-        { "key": 2, "name": "Casual" },
-        { "key": 3, "name": "Corrida" }
+        { "key": 1, "text": "Esporte e lazer", "value": "" },
+        { "key": 2, "text": "Casual", "value": "" },
+        { "key": 3, "text": "Corrida", "value": "" }
     ]
 
     const generos = [
-        { "key": 1, "name": "Masculino" },
-        { "key": 2, "name": "Feminino" },
-        { "key": 3, "name": "Unisex" }
+        { "key": 1, "text": "Masculino", "value": "" },
+        { "key": 2, "text": "Feminino", "value": "" },
+        { "key": 3, "text": "Unisex", "value": "" }
     ]
 
     const estados = [
-        { "key": 1, "name": "Novo" },
-        { "key": 2, "name": "Usado" }
+        { "key": 1, "text": "Novo", "value": "" },
+        { "key": 2, "text": "Usado", "value": "" }
     ]
     return (
-        <div className="w-full flex gap-5 px-2 py-3 justify-content-center" style={{ backgroundColor: "#f0efef" }}>
+        <div className="w-full flex gap-5 px-2 py-3 justify-content-center" style={{ backgroundColor: "#f0efef", width: "308px" }}>
             <div>
-                <div className="" style={{ backgroundColor: "#e75050", color: "#474747", fontSize: "16px", width: "308px", height: "60px" }}>
-                    <label htmlFor="ordenar-por"><b>Ordenar por: </b></label>
-                    <select style={{ width: "60%" }} name="" id="ordenar-por">
+                <div className="flex justify-content-center align-items-center gap-2" style={{ backgroundColor: "transparent", color: "#919090", fontSize: "16px", width: "auto", height: "60px", borderRadius: "4px", border: "solid 0.1px" }}>
+                    <label style={{ color: "#474747" }} htmlFor="ordenar-por"><b>Ordenar por: </b></label>
+                    <select style={{ backgroundColor: "transparent", width: "60%" }} name="" id="ordenar-por">
                         <option value="">mais relevantes</option>
                         <option value="">menor preço</option>
                         <option value="">maior preço</option>
                     </select>
                 </div>
-                <fieldset className="my-3 pb-2" style={{ width: "308px", backgroundColor: "#fffff" }}>
-                    <h1 style={{ fontSize: "16px" }}>Filtrar por:</h1>
-                    <hr style={{ backgroundColor: "#CCCCCC" }} />
+                <fieldset className="my-3 pb-2" style={{ width: "308px", backgroundColor: "#ffffff", borderRadius: "4px", border: "none" }}>
+                    <h1 style={{ fontSize: "16px", color: "#474747" }}>Filtrar por:</h1>
+                    <hr style={{ backgroundColor: "#CCCCCC", border: "1px solid" }} />
                     <>
                         <FilterGroup title="Marca" inputType='checkbox' options={ marcas } />
                         <FilterGroup title="Categoria" inputType='checkbox' options={ categorias } />

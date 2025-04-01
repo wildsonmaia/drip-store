@@ -1,0 +1,42 @@
+[
+    {
+        "key": 1,
+        "src": "/images/home-slide-1.jpeg",
+        "thumbnails": "/images/home-slide-1.jpeg"
+    },
+    {
+        "key": 2,
+        "src": "/images/home-slide-2.jpeg",
+        "thumbnails": "/images/home-slide-2.jpeg"
+    },
+    {
+        "key": 3,
+        "src": "/images/home-slide-3.jpeg",
+        "thumbnails": "/images/home-slide-3.jpeg"
+    },
+    {
+        "key": 4,
+        "src": "/images/home-slide-4.jpeg",
+        "thumbnails": "/images/home-slide-4.jpeg"
+    },
+    {
+        "key": 5,
+        "src": "/images/home-slide-5.jpeg",
+        "thumbnails": "/images/home-slide-5.jpeg"
+    },
+    {
+        "key": 6,
+        "src": "/images/home-slide-6.jpeg",
+        "thumbnails": "/images/home-slide-6.jpeg"
+    },
+    {
+        "key": 7,
+        "src": "/images/home-slide-7.jpeg",
+        "thumbnails": "/images/home-slide-7.jpeg"
+    },
+    {
+        "key": 8,
+        "src": "/images/home-slide-8.jpeg",
+        "thumbnails": "/images/home-slide-8.jpeg"
+    }
+]

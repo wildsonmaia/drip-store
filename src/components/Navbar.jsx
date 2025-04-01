@@ -21,7 +21,7 @@ const Navbar = () => {
                 <NavContainer>
                         <nav>
                                 <ul className="flex list-none gap-5">
-                                        <li><NavLink to="/home">Home</NavLink></li>
+                                        <li><NavLink to="/">Home</NavLink></li>
                                         <li><NavLink to="/produtos">Produtos</NavLink></li>
                                         <li><NavLink to="/categorias">Categorias</NavLink></li>
                                         <li><NavLink to="/pedidos">Meus Pedidos</NavLink></li>

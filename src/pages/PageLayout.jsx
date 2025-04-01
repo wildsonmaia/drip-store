@@ -4,9 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const PageLayout = () => {
     return ( 
-        <div className="w-full">
+        <div className="w-auto">
             <Header />
-            <main className="flex justify-content-center">
+            <main className="w-auto flex justify-content-center">
                 <Outlet />
             </main>
             <Footer />

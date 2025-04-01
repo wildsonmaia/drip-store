@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import gmail from "../assets/gmail.png"
+import facebook from "../assets/facebook.png"
 
 const SignUp = () => {
     const [ name, setName ] = useState('')
@@ -21,49 +22,28 @@ const SignUp = () => {
         navigate('/home')
     }
     return (
-        <div className="w-4 my-6 flex-column text-center justify-content-center">
-            <h1>Cadastro</h1>
-            <form onSubmit={handleSubmit}>
-            
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="name">Nome completo:
-                        </label>
-                        <input type="name" id="name" value={name} onChange={(e) => {setName(e.target.value)}} />
+
+        <div style={{ backgroundColor: "#babbf2" }} className="w-full flex justify-content-center align-items-center">
+                    <div className="w-3 flex-column text-center justify-content-center my-6 p-3" style={{ backgroundColor: "#ffffff", borderRadius: '4px' }}>
+                        <div>
+                            <h1 className="text-left">Crie sua conta</h1>
+                            <p className="text-left">Já possui uma conta? Então, entre <a style={{ color: "#000000" }} href="">aqui</a>.</p>
+                        </div>
+                        <form onSubmit={handleSubmit}>                            
+                            <div className="flex flex-column mb-3">
+                                <label className="flex mb-1 justify-content-start" htmlFor="email">E-mail *
+                                </label>
+                                <input className="p-3 border-none" style={{ backgroundColor: "#f9f8fe" }} type="email" id="email" placeholder="Insira seu e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            </div>
+                            <button className="w-full border-none p-2" style={{ backgroundColor: "#C92071", borderRadius: "4px", color: "#ffffff" }} type="submit">Criar Conta</button>
+                        </form>
+                        <div className="flex justify-content-center align-items-center gap-2">
+                            <p>Ou faça login com </p>
+                            <img style={{ width: "24px", height: "24px" }} src={gmail} alt="" />
+                            <img style={{ width: "24px", height: "24px" }} src={facebook} alt="" />
+                        </div>
                     </div>
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="number">Número:
-                        </label>
-                        <input type="tel" id="number" value={number} onChange={(e) => {setNumber(e.target.value)}} />
-                    </div>
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="cpf">CPF:
-                        </label>
-                        <input type="tel" id="cpf" value={cpf} onChange={(e) => {setCPF(e.target.value)}} />
-                    </div>
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="date">Data de nascimento:
-                        </label>
-                        <input type="date" id="date" value={date} onChange={(e) => {setDate(e.target.value)}} />
-                    </div>
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="cep">CEP:
-                        </label>
-                        <input type="tel" id="cep" value={cep} onChange={(e) => {setCEP(e.target.value)}} />
-                    </div>
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="email">Email:
-                        </label>
-                        <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <div className="flex flex-column mb-3">
-                        <label className="flex mb-1 justify-content-start" htmlFor="password">Senha:
-                        </label>
-                        <input type="password" id="password" value={password} onChange={(e) => {setPassword(e.target.value)}} />
-                    </div>
-                    <button type="submit">Cadastrar</button>
-            
-            </form>
-        </div>
+                </div>        
      );
 }
  

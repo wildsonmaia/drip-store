@@ -8,14 +8,14 @@ const BuyBox = ({ name, reference, stars, rating, price, priceDiscount, descript
          starElements.push(<i key={i} style={{ fontSize:"14px", color: "#F6AA1C" }} className="pi pi-star-fill"></i>);
       }
       return starElements;
-   };
+   }
 
    const optionsSize = [ "39", "40", "41", "42" ]
    
-   const optionsColor = [ "#000", "#fffff", "#2698bb" ]
+   const optionsColor = [ "#000", "#fffff", "#2698bb", "#bb267d" ]
 
    return (
-      <div>
+      <div className="flex flex-column justify-content-between" style={{ height: "570px" }}>
          <div style={{ fontSize: "32px", color: "#1F1F1F" }}>{name}</div>
          {
             reference != "" && (
@@ -48,17 +48,10 @@ const BuyBox = ({ name, reference, stars, rating, price, priceDiscount, descript
                )
             }
          </div>
-         <div className=""><h1>Descrição do produto</h1><p style={{ fontSize: "14px", color: "#474747" }}>{description}</p></div>
-         <ProductOptions  >
-            <ul className="flex gap-3">
-               <li style={{ backgroundColor: "#992b2b", borderRadius: "4px" }}>39</li>
-               <li>40</li>
-               <li>41</li>
-               <li>42</li>
-            </ul>
-         </ProductOptions>
-         <ProductOptions><h1>Cores</h1></ProductOptions>
-         <button style={{ backgroundColor: "#F6AA1C", color: "#ffffff", fontSize: "16px" }}>Comprar</button>
+         <div className="flex-wrap"><h1>Descrição do produto</h1><p style={{ fontSize: "14px", color: "#474747" }}>{description}</p></div>
+         <ProductOptions options={optionsSize} shape="square" radius="8px" type="text" />
+         <ProductOptions options={optionsColor} shape="circle" radius="" type="color" />
+         <button style={{ backgroundColor: "#F6AA1C", color: "#ffffff", fontSize: "16px", width: "35%", height: "10%", borderRadius: "6px", border: "none" }}>COMPRAR</button>
       </div>
    );
 }
